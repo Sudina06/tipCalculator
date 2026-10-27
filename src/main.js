@@ -51,7 +51,7 @@ const calculate = () =>{
     error.innerText = "Enter valid amount and number of people";
     return;
   }
-  error.innerText = "";
+  error.textContent = "";
   const tipAmount = billAmount*(percentage/100);
 
   const totalAmount = (billAmount + tipAmount);
