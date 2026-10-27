@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/src/style.css" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    .active{
+      background-color: #8b5cf6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="w-full h-screen relative overflow-hidden bg-[#D3D3FF]/30 flex flex-col items-center justify-center">
+    <div class="absolute w-40 h-40 -top-16 -left-16 rounded-full opacity-30 bg-[#9F9FFF]">
+    </div>
+    <div class="absolute w-60 h-60 -bottom-30 -left-20 rounded-full opacity-30 bg-[#9F9FFF]">
+    </div>
+    <div class="absolute w-70 h-70  -right-50 rounded-full opacity-30 bg-[#9F9FFF]">
+    </div>
+    <img class=" w-10" src="./src/assets/Hot-Beverage--Streamline-Emojitwo-Black.svg">
+    <p class="font-bold text-3xl">Tip Calculator</p>
+    <p class="text-gray-500 p-2">Split the bill, share the good vibes</p>
+    <div class="Calculation grid grid-cols-1 sm:grid-cols-2 z-99 shadow-2xl" >
+      <div class="bg-white rounded-t-2xl sm:rounded-l-2xl sm:rounded-tr-none p-4 text-sm ">
+        <div>
+          <p class="font-semibold pb-2">Bill Amount</p>
+          <div class="flex items-center border border-gray-200 p-2 rounded-xl ">
+            <span class="text-slate-500 mr-3">$</span>
+            <input id="amount" type="number" class="w-60 font-bold text-slate-800 outline-none">
+          </div>
+        </div>
+      
+      <div>
+        <p class="font-semibold pt-2">Tip Percentage</p> 
+        <div class="grid grid-cols-5 gap-1.5 pt-4">
+          <button id="btn1" class=" rounded-lg bg-slate-100 py-2 text-sm font-medium hover:bg-violet-500" onclick="putPercentage(5)">5%</button>
+          <button id="btn2" class=" rounded-lg bg-slate-100 py-2 text-sm font-medium hover:bg-violet-500"onclick="putPercentage(10)">10%</button>
+          <button id="btn3" class=" rounded-lg  bg-slate-100 py-2 text-sm font-medium hover:bg-violet-500"onclick="putPercentage(15)">15%</button>
+          <button id="btn4" class=" rounded-lg bg-slate-100 py-2 text-sm font-medium hover:bg-violet-500"onclick="putPercentage(20)">20%</button>
+          <button id="btn5" class=" rounded-lg bg-slate-100 py-2 text-sm font-medium hover:bg-violet-500"onclick="putPercentage(25)">25%</button>
+        </div>
+        <div class="pt-2">
+        <input id="cusTip" type="number" class=" p-2 w-full border border-gray-200 rounded-xl  font-bold text-slate-800 outline-none" placeholder="Enter your custom tip(eg.18%)">
+        </div>
+        
+      </div>
+
+      <div>
+        <p class="font-semibold pt-2">Number of People</p>
+        <div class="pt-2">
+          <input id="numOfPeople" type="number" class=" p-2 w-full border border-gray-200 rounded-xl  font-bold text-slate-800 outline-none">
+
+        </div>
+      </div>
+      <div class="pt-4 ">
+      <button id="calc" class= " bg-slate-200 w-full bg-purple hover:bg-indigo-600 hover:text-white font-semibold py-3 rounded-lg shadow-md transition" onclick="calculate()">Calculate</button>
+      <p id="error" class="text-center pt-2 text-red-600">ss</p>
+      </div>  
+
+      </div>
+
+
+      
+        <div class="bg-blue-900 w-full text-white p-5 rounded-b-2xl sm:rounded-r-2xl sm:rounded-bl-none  ">
+          <h2 class="text-lg font-bold mb-6 pl-3"><span class="text-blue-300 pr-1">▤ </span>Summary</h2>
+          <div class="flex justify-between pb-2">
+            <p class="text-blue-300">Bill Amount</p>
+            <p id="billAmt">-</p>
+          </div>
+          <div class="flex justify-between pb-4">
+            <p class="text-blue-300">Tip(<span id="selectedPercentage"></span><span>%</span>)</p>
+            <p id="tipAmt">-</p>
+          </div>
+          <div class="border border-b-blue-600"></div>
+
+          <div class="flex justify-between pb-4 pt-4">
+            <p >Total Amount</p>
+            <p id="totalAmt" class="text-cyan-400">-</p>
+          </div>
+
+          <div class="bg-blue-950 rounded-xl p-3 ">
+            <p class="text-sm text-gray-400"><span class="pr-4 text-white text-xl">♙</span>Per Person</p>
+            <p  class="text-2xl pl-6">$<span id="perPerson"></span></p>
+          </div>
+
+          <p class="text-blue-300 text-xs text-center pt-3 ">Good food brings people together</p>
+          <p class="text-blue-300 text-center">♡</p>
+
+
+
+
+
+        </div>
+
+      
+
+    </div>
+
+
+
+
+  </div>
+  <script src="./src/main.js"></script>
+</body>
+</html>
